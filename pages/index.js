@@ -1,50 +1,57 @@
-import React, { useState } from 'react'
+import Head from 'next/head'
+import videoLinks from '../components/videolinks'
+import { useState } from 'react'
 
-const YourComponent = () => {
-  const [fileImage, setFileImage] = useState('')
-
-  const handleLocalImageChange = (event) => {
-    // Assuming the local image input is of type file
-    const file = event.target.files[0]
-
-    if (file) {
-      // Perform any additional processing if needed
-      setFileImage(URL.createObjectURL(file))
-    }
-  }
-
-  const handleOnlineImageChange = (event) => {
-    const imageUrl = event.target.value
-    setFileImage(imageUrl)
-  }
+const Home = () => {
+  const [currentVideo, setCurrentVideo] = useState(videoLinks[0])
 
   return (
-    <div>
-      <label>
-        Local Image:
-        <input type="file" onChange={handleLocalImageChange} />
-      </label>
-
-      <br />
-
-      <label>
-        Online Image URL:
-        <input
-          type="text"
-          onChange={handleOnlineImageChange}
-          placeholder="https://example.com/image.jpg"
+    <>
+      <Head>
+        <title>Muhammad's Boom Boom Room</title>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
         />
-      </label>
+      </Head>
 
-      {/* Render the image preview only if the fileImage state is not empty */}
-      {fileImage && (
-        <div>
-          <h2>Preview:</h2>
-          <img src={fileImage} alt="Preview" />
+      <div className="w-full h-screen bg-[#23251F]">
+        <div className="w-inherit p-7 border-b-2">
+          <p className="text-3xl text-white font-bold">
+            Muhammad's Boom Boom Room
+          </p>
         </div>
-      )}
-    </div>
+        <div className="flex gap-x-6 flex-row w-full px-8 py-10">
+          <div className="w-3/5">
+            <iframe
+              className="mb-6 w-full border-2 bg-slate-700 border-slate-700 h-[30rem]"
+              src={currentVideo.src}
+              allow="autoplay"
+            ></iframe>
+            <p className="text-white text-2xl font-semibold">
+              {currentVideo.name}
+            </p>
+          </div>
+          <div className="w-2/5">
+            <p className="text-[#a4dc9a] text-2xl font-semibold p-2">
+              Episode lists
+            </p>
+            <div className="w-inherit flex items-start flex-col">
+              {videoLinks.map((item, key) => (
+                <button
+                  onClick={() => setCurrentVideo(item)}
+                  className="text-white font-semibold p-2"
+                  key={key}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
-export default YourComponent
+export default Home
