@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Muhammad's Boom Boom Room</title>
+        <title>{`Muhammad's Boom Boom Room1`}</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
