@@ -18,7 +18,7 @@ const Home = () => {
       <div className="w-full h-screen bg-[#23251F]">
         <div className="w-inherit p-7 border-b-2">
           <p className="text-3xl text-white font-bold">
-            Muhammad's Boom Boom Room
+            {`Muhammad's Boom Boom Room`}
           </p>
         </div>
         <div className="flex gap-x-6 flex-row w-full px-8 py-10">
