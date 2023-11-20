@@ -47,7 +47,7 @@ const videoLinks = [
   {
     name: 'Episode 10 - Muhammad Meets Stephen W. Hawking',
     src:
-      'https://drive.google.com/file/d/1hJY9o6TJKtxEFGHoTUwkKU2SLbBXJi07/preview',
+      'https://drive.google.com/file/d/1Q4s6ivvcabRTuqyfxyfOXU09P0K8ggQl/preview',
   },
   {
     name: 'Episode 11 - Muhammad Meets The Joker ',
